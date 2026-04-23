@@ -1,0 +1,6 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#1E293B"/>
+  <circle cx="200" cy="160" r="60" fill="#22C55E"/>
+  <path d="M120 280 Q200 320 280 280 L280 340 Q200 380 120 340 Z" fill="#22C55E"/>
+  <text x="200" y="390" font-family="monospace" font-size="24" fill="#F8FAFC" text-anchor="middle">YL</text>
+</svg>

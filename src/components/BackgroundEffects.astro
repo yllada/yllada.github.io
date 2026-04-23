@@ -1,0 +1,79 @@
+---
+---
+
+<!-- Two-layer composition: static dot grid + single soft ámbar glow (opacity pulse only). -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-fx__dots"></div>
+  <div class="bg-fx__glow"></div>
+</div>
+
+<style>
+  .bg-fx {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    contain: strict;
+  }
+
+  .bg-fx__dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle at center,
+      rgba(199, 154, 91, 0.18) 0.5px,
+      transparent 1.5px
+    );
+    background-size: 48px 48px;
+    background-position: 0 0;
+    opacity: 0.55;
+  }
+
+  .bg-fx__glow {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 70vw;
+    height: 70vw;
+    max-width: 900px;
+    max-height: 900px;
+    background: radial-gradient(
+      circle at center,
+      rgba(199, 154, 91, 0.10) 0%,
+      rgba(199, 154, 91, 0.04) 35%,
+      transparent 70%
+    );
+    will-change: opacity;
+    animation: bg-glow-pulse 22s ease-in-out infinite;
+  }
+
+  @keyframes bg-glow-pulse {
+    0%,
+    100% {
+      opacity: 0.85;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none), (max-width: 768px) {
+    .bg-fx__dots {
+      background-size: 56px 56px;
+      opacity: 0.45;
+    }
+    .bg-fx__glow {
+      animation-duration: 32s;
+      opacity: 0.75;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-fx__glow {
+      animation: none !important;
+      opacity: 0.9;
+      will-change: auto;
+    }
+  }
+</style>

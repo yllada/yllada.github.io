@@ -1,0 +1,27 @@
+[
+  { "name": "Go", "category": "backend" },
+  { "name": "gRPC", "category": "backend" },
+  { "name": "OpenSearch / Elasticsearch", "category": "backend" },
+  { "name": "PostgreSQL", "category": "backend" },
+  { "name": "CEL", "category": "backend" },
+  { "name": "YAML pipelines", "category": "backend" },
+
+  { "name": "SIEM / XDR", "category": "security" },
+  { "name": "Log parsing & correlation", "category": "security" },
+  { "name": "Syslog", "category": "security" },
+  { "name": "WireGuard", "category": "security" },
+  { "name": "OpenVPN", "category": "security" },
+  { "name": "Tailscale", "category": "security" },
+
+  { "name": "AWS", "category": "cloud" },
+  { "name": "Azure", "category": "cloud" },
+  { "name": "Docker", "category": "cloud" },
+  { "name": "GitHub Actions", "category": "cloud" },
+
+  { "name": "OpenAI-compatible LLM APIs", "category": "ai" },
+  { "name": "Google Gemini", "category": "ai" },
+
+  { "name": "GTK4", "category": "frontend" },
+  { "name": "Wails", "category": "frontend" },
+  { "name": "Next.js / React / TypeScript", "category": "frontend" }
+]

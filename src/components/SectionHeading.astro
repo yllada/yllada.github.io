@@ -1,0 +1,19 @@
+---
+export interface Props {
+  eyebrow: string;
+  title: string;
+  id?: string;
+}
+
+const { eyebrow, title, id } = Astro.props;
+const headingId = (id ?? eyebrow.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')) + '-heading';
+---
+
+<header class="mb-12 md:mb-16">
+  <p class="font-label text-label uppercase tracking-[0.2em] text-ink-faint mb-3">
+    {eyebrow}
+  </p>
+  <h2 id={headingId} class="font-serif text-h2 text-ink font-medium">
+    {title}
+  </h2>
+</header>

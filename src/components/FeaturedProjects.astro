@@ -1,0 +1,36 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import ProjectCard from './ProjectCard.astro';
+import projects from '../data/projects.json';
+---
+
+<section
+  id="work"
+  aria-labelledby="03-selected-work-heading"
+  class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 py-32 md:py-40 lg:py-48"
+>
+  <SectionHeading
+    eyebrow="03 · SELECTED WORK"
+    title="Projects"
+    id="03-selected-work"
+  />
+
+  <div class="space-y-8 md:space-y-10">
+    {projects.map((project, i) => (
+      <div
+        data-reveal
+        style={`transition-delay: ${i * 60}ms`}
+      >
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          metrics={project.metrics}
+          tags={project.tags}
+          url={project.url}
+          github={project.github}
+          preview={project.preview ?? null}
+        />
+      </div>
+    ))}
+  </div>
+</section>

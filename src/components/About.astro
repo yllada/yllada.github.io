@@ -1,0 +1,80 @@
+---
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section
+  id="about"
+  aria-labelledby="01-about-heading"
+  class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 py-32 md:py-40 lg:py-48"
+  data-reveal
+>
+  <SectionHeading
+    eyebrow="01 · ABOUT"
+    title="A software engineer at the intersection of backend systems and security"
+    id="01-about"
+  />
+
+  <div class="grid md:grid-cols-[2fr_1fr] gap-10 md:gap-16">
+    <!-- Left: bio paragraphs -->
+    <div class="space-y-6 font-serif text-body text-ink-muted leading-[1.65] max-w-prose">
+      <p>
+        I build backend systems that handle the kind of data you can't afford to lose —
+        security telemetry, IoT sensor streams, encrypted payloads. My stack is Go-first,
+        with gRPC for service boundaries and Elasticsearch or PostgreSQL depending on
+        what the query patterns demand. I care about correctness before optimization, and
+        observability from day one.
+      </p>
+      <p>
+        Currently building the MVP of <a href="https://gitdoc.ai" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent transition-colors duration-120 underline underline-offset-4 decoration-rule-strong">GitDocAI</a> —
+        an AI-powered documentation platform with a Go backend and React/Angular frontends.
+        Also a Go contributor on <a href="https://utmstack.com" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent transition-colors duration-120 underline underline-offset-4 decoration-rule-strong">UTMStack</a>,
+        an open-source SIEM/XDR/SOAR platform — SOC-AI alert correlation, the UTMStack
+        Agent, cloud plugins, and vendor log filters for over fifteen sources.
+      </p>
+      <p>
+        I follow zero-trust architecture, AI-augmented threat detection, and the Go OSS
+        ecosystem closely. Same discipline throughout: reliable systems in
+        resource-constrained environments, shipped with observability from day one.
+      </p>
+    </div>
+
+    <!-- Right: portrait + meta-list -->
+    <div>
+      <figure class="mb-10 relative w-fit">
+        <div class="absolute -inset-2 rounded-full bg-accent/5 blur-2xl" aria-hidden="true"></div>
+        <picture>
+          <source srcset="/images/perfil.webp" type="image/webp" />
+          <img
+            src="/images/perfil.jpg"
+            alt="Yadian Llada Lopez"
+            width="200"
+            height="200"
+            class="relative w-[180px] h-[180px] md:w-[200px] md:h-[200px] rounded-full object-cover border border-rule-strong"
+            loading="lazy"
+          />
+        </picture>
+      </figure>
+
+      <dl class="space-y-5">
+        <div>
+          <dt class="font-label text-label uppercase tracking-[0.12em] text-ink-faint mb-1">Location</dt>
+          <dd class="font-mono text-code text-ink-muted">Ciego de Ávila, Cuba · Remote</dd>
+        </div>
+        <div>
+          <dt class="font-label text-label uppercase tracking-[0.12em] text-ink-faint mb-1">Focus</dt>
+          <dd class="font-mono text-code text-ink-muted">Backend · Cybersecurity · Cloud</dd>
+        </div>
+        <div>
+          <dt class="font-label text-label uppercase tracking-[0.12em] text-ink-faint mb-1">Languages</dt>
+          <dd class="font-mono text-code text-ink-muted">
+            Spanish (native) · English (working / conversational)
+          </dd>
+        </div>
+        <div>
+          <dt class="font-label text-label uppercase tracking-[0.12em] text-ink-faint mb-1">Open To</dt>
+          <dd class="font-mono text-code text-ink-muted">Remote roles · Contracts · OSS collaborations</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

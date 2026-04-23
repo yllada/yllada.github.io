@@ -1,0 +1,21 @@
+---
+import StackChip from './StackChip.astro';
+
+export interface Props {
+  category: string;
+  items: string[];
+}
+
+const { category, items } = Astro.props;
+---
+
+<div>
+  <h3 class="font-label text-label uppercase tracking-[0.2em] text-ink-faint mb-4">
+    {category}
+  </h3>
+  <div class="flex flex-wrap gap-2">
+    {items.map((item) => (
+      <StackChip label={item} />
+    ))}
+  </div>
+</div>

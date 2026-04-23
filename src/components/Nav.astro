@@ -1,0 +1,61 @@
+---
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#work', label: 'Work' },
+  { href: '#stack', label: 'Stack' },
+  { href: '#open-source', label: 'Open Source' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<nav
+  aria-label="Primary"
+  class="fixed top-0 inset-x-0 z-40 border-b border-rule/40 bg-canvas/60 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-canvas/50"
+>
+  <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 h-14 flex items-center justify-between gap-6">
+    <a
+      href="#hero"
+      class="font-label text-label uppercase tracking-[0.2em] text-ink hover:text-accent transition-colors duration-120 shrink-0"
+    >
+      <span class="hidden sm:inline">Yadian&nbsp;Llada</span>
+      <span class="sm:hidden">Y.&nbsp;Llada</span>
+    </a>
+
+    <ul role="list" class="hidden md:flex items-center gap-7 lg:gap-9 overflow-x-auto">
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="font-label text-caption uppercase tracking-[0.12em] text-ink-muted hover:text-accent transition-colors duration-120 whitespace-nowrap"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <ul
+      role="list"
+      class="md:hidden flex items-center gap-5 overflow-x-auto scrollbar-none -mr-6 pr-6 nav-mobile-fade"
+    >
+      {links.map(({ href, label }) => (
+        <li>
+          <a
+            href={href}
+            class="font-label text-caption uppercase tracking-[0.12em] text-ink-muted hover:text-accent transition-colors duration-120 whitespace-nowrap"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav-mobile-fade {
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 75%, transparent 100%);
+    mask-image: linear-gradient(to right, black 0%, black 75%, transparent 100%);
+  }
+</style>

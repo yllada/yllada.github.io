@@ -1,0 +1,101 @@
+---
+import StackChip from './StackChip.astro';
+import githubStats from '../data/github-stats.json';
+
+export interface ProjectPreview {
+  src: string;
+  fallback: string;
+  alt: string;
+}
+
+export interface Props {
+  title: string;
+  description: string;
+  metrics?: string | null;
+  tags: string[];
+  url?: string | null;
+  github?: string | null;
+  preview?: ProjectPreview | null;
+}
+
+const { title, description, metrics, tags, url, github, preview = null } = Astro.props;
+
+// Resolve auto-refreshed star counts by matching the project's GitHub URL
+// against the build-time stats file. Only yllada's own repos are tracked;
+// everything else (or a null github prop) renders without a star line.
+const starTargets: Record<string, { stars: number }> = {
+  [githubStats.vpnManager.url]: githubStats.vpnManager,
+  [githubStats.sendLogTcp.url]: githubStats.sendLogTcp,
+};
+const repoStats = github ? starTargets[github] ?? null : null;
+---
+
+<article class:list={[
+  'grid gap-8 md:gap-12 p-8 md:p-10 border border-rule rounded-md hover:border-rule-strong transition-colors duration-150 group',
+  preview ? 'md:grid-cols-[1.1fr_1fr]' : 'md:grid-cols-1'
+]}>
+  <!-- Left: content + links -->
+  <div class="flex flex-col gap-4">
+    <h3 class="font-serif text-h2 text-ink group-hover:text-accent transition-colors duration-150 leading-[1.15]">
+      {title}
+    </h3>
+    <p class="font-serif text-body text-ink-muted leading-[1.65] max-w-prose">
+      {description}
+    </p>
+    {metrics && (
+      <p class="font-label text-caption tracking-[0.08em] text-ink-faint">
+        {metrics}
+        {repoStats && (
+          <>
+            <span class="mx-2" aria-hidden="true">·</span>
+            <span>★ {repoStats.stars} {repoStats.stars === 1 ? 'STAR' : 'STARS'}</span>
+          </>
+        )}
+      </p>
+    )}
+    <div class="flex flex-wrap gap-2 pt-2">
+      {tags.map((tag) => <StackChip label={tag} />)}
+    </div>
+    <div class="flex flex-col gap-3 pt-4 mt-auto">
+      {github && (
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-baseline gap-2 font-mono text-code text-accent hover:text-accent-soft transition-colors duration-120"
+        >
+          <span class="font-label text-label uppercase tracking-[0.12em] text-ink-faint">GitHub</span>
+          {github.replace('https://github.com/', '')} ↗
+        </a>
+      )}
+      {url && (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-baseline gap-2 font-mono text-code text-accent hover:text-accent-soft transition-colors duration-120"
+        >
+          <span class="font-label text-label uppercase tracking-[0.12em] text-ink-faint">Site</span>
+          {url.replace(/^https?:\/\//, '')} ↗
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Right: preview image (defensive: only render if preview provided) -->
+  {preview && (
+    <div class="flex items-start">
+      <picture class="block w-full">
+        <source srcset={preview.src} type="image/webp" />
+        <img
+          src={preview.fallback}
+          alt={preview.alt}
+          width="1440"
+          height="1080"
+          loading="lazy"
+          class="w-full h-full aspect-[4/3] object-contain bg-surface-1 rounded-md border border-rule shadow-lift"
+        />
+      </picture>
+    </div>
+  )}
+</article>

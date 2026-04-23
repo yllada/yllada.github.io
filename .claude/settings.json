@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(eza -la /home/yadian/Escritorio/yllada --git-ignore)",
+      "Bash(eza -la /home/yadian/Escritorio/yllada)",
+      "Bash(/bin/ls -la /home/yadian/Escritorio/yllada)",
+      "Bash(/bin/ls /home/yadian/Escritorio/yllada/src)",
+      "Bash(/bin/ls -la /home/yadian/Escritorio/yllada/src/components /home/yadian/Escritorio/yllada/src/data /home/yadian/Escritorio/yllada/src/layouts /home/yadian/Escritorio/yllada/src/pages /home/yadian/Escritorio/yllada/src/styles)",
+      "Bash(/bin/ls -la /home/yadian/Escritorio/yllada/.claude /home/yadian/Escritorio/yllada/public)",
+      "Bash(/bin/ls -la /home/yadian/Escritorio/yllada/.eslintrc* /home/yadian/Escritorio/yllada/.prettierrc* /home/yadian/Escritorio/yllada/eslint.config*)"
+    ]
+  }
+}

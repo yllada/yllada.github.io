@@ -1,0 +1,39 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { openSource } from '../data/open-source';
+---
+
+<section
+  id="open-source"
+  aria-labelledby="05-open-source-heading"
+  class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 py-32 md:py-40 lg:py-48"
+  data-reveal
+>
+  <SectionHeading
+    eyebrow="05 · OPEN SOURCE"
+    title="Contributions"
+    id="05-open-source"
+  />
+
+  <p class="font-serif text-body text-ink-muted leading-[1.65] max-w-prose mb-12">
+    Public code I've shipped into other people's projects — merged PRs and
+    commits you can read end to end on GitHub.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    {openSource.map((entry) => (
+      <article class="space-y-2 p-5 border border-rule rounded-md hover:border-rule-strong transition-colors duration-150">
+        <h3 class="font-serif text-h3 text-ink leading-[1.3]">{entry.name}</h3>
+        <p class="font-serif text-small text-ink-muted leading-[1.55]">{entry.blurb}</p>
+        <a
+          href={entry.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block font-mono text-code text-accent hover:text-accent-soft transition-colors duration-120"
+        >
+          {entry.url.replace('https://github.com/', 'github.com/')} ↗
+        </a>
+      </article>
+    ))}
+  </div>
+</section>

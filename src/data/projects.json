@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Combazo",
+    "description": "E-commerce marketplace for the Cuban market. Multi-vendor platform with verified sellers, storefront customization, order management, and AI-assisted merchant onboarding. Live in production at combazo.vercel.app.",
+    "metrics": "Next.js 16 · React 19 · Prisma · PostgreSQL · NextAuth · Google Gemini",
+    "tags": ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "AI"],
+    "url": "https://combazo.vercel.app/",
+    "github": null,
+    "preview": {
+      "src": "/images/combazo-preview.webp",
+      "fallback": "/images/combazo-preview.png",
+      "alt": "Combazo — e-commerce marketplace home showing product hero and category grid"
+    }
+  },
+  {
+    "title": "VPN Manager",
+    "description": "GTK4 VPN client for Linux. Native UI combining OpenVPN, WireGuard and Tailscale with kill switch, DNS and IPv6 leak protection, Evil Twin detection, and network trust management.",
+    "metrics": "Go 1.26+ · GTK 4.14+ · MIT",
+    "tags": ["Go", "GTK4", "Linux", "Cybersecurity"],
+    "url": "https://yllada.github.io/vpn-manager/",
+    "github": "https://github.com/yllada/vpn-manager",
+    "preview": {
+      "src": "/images/vpn-manager.webp",
+      "fallback": "/images/vpn-manager.png",
+      "alt": "VPN Manager — GTK4 app showing statistics dashboard with traffic, sessions, and daily usage chart"
+    }
+  },
+  {
+    "title": "Send-Log-TCP",
+    "description": "Cross-platform desktop tool for sending logs to SIEM collectors over TCP/UDP syslog. Built for testing and debugging ingestion pipelines with delivery confirmation.",
+    "metrics": "Go · Wails · TypeScript",
+    "tags": ["Go", "Wails", "TypeScript", "Syslog", "SIEM"],
+    "url": null,
+    "github": "https://github.com/yllada/Send-Log-TCP",
+    "preview": {
+      "src": "/images/send-log.webp",
+      "fallback": "/images/send-log.png",
+      "alt": "Send-Log-TCP — desktop syslog client with connection settings and message configuration panels"
+    }
+  }
+]

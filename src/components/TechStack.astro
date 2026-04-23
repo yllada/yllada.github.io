@@ -1,0 +1,45 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import StackGroup from './StackGroup.astro';
+import skills from '../data/skills.json';
+
+const categoryOrder = ['backend', 'security', 'cloud', 'ai', 'frontend'] as const;
+const categoryLabels: Record<string, string> = {
+  backend: 'Core backend',
+  security: 'Security',
+  cloud: 'Cloud & Delivery',
+  ai: 'AI & Data',
+  frontend: 'Desktop & Frontend',
+};
+
+// Group skills by category in spec order
+const grouped = categoryOrder.map((cat) => ({
+  category: categoryLabels[cat],
+  items: skills.filter((s) => s.category === cat).map((s) => s.name),
+}));
+---
+
+<section
+  id="stack"
+  aria-labelledby="04-stack-heading"
+  class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 py-32 md:py-40 lg:py-48"
+>
+  <SectionHeading
+    eyebrow="04 · STACK"
+    title="Tools of the craft"
+    id="04-stack"
+  />
+
+  <p class="font-serif text-body text-ink-muted leading-[1.65] max-w-prose mb-12">
+    Backend I ship with Go — distributed services, security pipelines, and the
+    occasional desktop app. When the stack has to fit the problem I reach for the
+    right tool: Next.js for product UIs, GTK4 or Wails for native Linux, gRPC and
+    OpenSearch when data and latency matter.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-y-10 gap-x-16">
+    {grouped.filter((g) => g.items.length > 0).map((group) => (
+      <StackGroup category={group.category} items={group.items} />
+    ))}
+  </div>
+</section>

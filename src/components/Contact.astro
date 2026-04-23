@@ -1,0 +1,36 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import ContactLink from './ContactLink.astro';
+---
+
+<section
+  id="contact"
+  aria-labelledby="06-contact-heading"
+  class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 py-32 md:py-40 lg:py-48"
+  data-reveal
+>
+  <SectionHeading
+    eyebrow="06 · CONTACT"
+    title="Let's build something that matters"
+    id="06-contact"
+  />
+
+  <p class="font-serif text-body-lg text-ink-muted leading-[1.55] max-w-prose mb-12">
+    <!-- TODO(user): refine copy -->
+    I'm open to remote backend roles, consulting contracts, and open-source
+    collaborations. If you're building something at the intersection of security,
+    systems, and intelligent infrastructure — let's talk.
+  </p>
+
+  <div class="flex flex-col gap-5 mb-24 max-w-2xl">
+    <ContactLink label="Email" url="mailto:yadian.llada@gmail.com" external={false} />
+    <ContactLink label="GitHub" url="https://github.com/yllada" />
+    <ContactLink label="LinkedIn" url="https://linkedin.com/in/yllada94" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-rule pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+    <span class="font-mono text-code text-ink-faint">© 2026 Yadian Llada Lopez</span>
+    <span class="font-mono text-code text-ink-faint">Built with Astro &amp; Tailwind</span>
+  </footer>
+</section>

@@ -1,0 +1,31 @@
+---
+export interface Props {
+  label: string;
+  url: string;
+  external?: boolean;
+}
+
+const { label, url, external = true } = Astro.props;
+const attrs = external
+  ? { target: '_blank', rel: 'noopener noreferrer' }
+  : {};
+---
+
+<a
+  href={url}
+  class="group inline-flex items-baseline gap-3"
+  {...attrs}
+>
+  <span class="font-label text-label uppercase tracking-[0.12em] text-ink-faint w-[88px] shrink-0">
+    {label}
+  </span>
+  <span class="font-mono text-code text-accent group-hover:text-accent-soft transition-colors duration-120">
+    {url.replace(/^(https?:\/\/|mailto:)/, '')}
+  </span>
+  <span class="text-ink-faint group-hover:text-accent transition-colors duration-120" aria-hidden="true" style="display:inline-block; vertical-align: baseline;">
+    <svg width="0.85em" height="0.85em" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9L9 3"/>
+      <path d="M5 3h4v4"/>
+    </svg>
+  </span>
+</a>

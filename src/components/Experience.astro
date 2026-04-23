@@ -1,0 +1,24 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import ExperienceCard from './ExperienceCard.astro';
+import { experience } from '../data/experience';
+---
+
+<section
+  id="experience"
+  aria-labelledby="02-experience-heading"
+  class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 py-32 md:py-40 lg:py-48"
+  data-reveal
+>
+  <SectionHeading
+    eyebrow="02 · EXPERIENCE"
+    title="Current work"
+    id="02-experience"
+  />
+
+  <div class="divide-y divide-rule">
+    {experience.map((entry) => (
+      <ExperienceCard entry={entry} />
+    ))}
+  </div>
+</section>
