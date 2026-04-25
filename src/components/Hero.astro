@@ -1,50 +1,55 @@
 ---
+import CornerFrame from './CornerFrame.astro';
 ---
 
 <section
   id="hero"
   aria-labelledby="hero-heading"
-  class="relative max-w-6xl mx-auto px-6 md:px-10 lg:px-12 pt-40 md:pt-48 lg:pt-56 pb-32 md:pb-40"
+  class="relative max-w-6xl mx-auto px-6 md:px-10 lg:px-12"
 >
-  <!-- Eyebrow -->
-  <p class="font-label text-label uppercase tracking-[0.2em] text-ink-faint mb-6">
-    Senior Software Engineer
-  </p>
+  <CornerFrame>
+    <div class="pt-40 md:pt-48 lg:pt-56 pb-32 md:pb-40">
+      <!-- Eyebrow -->
+      <p class="font-label text-label uppercase tracking-[0.2em] text-ink-faint mb-6">
+        Senior Software Engineer
+      </p>
 
-  <!-- h1 -->
-  <h1
-    id="hero-heading"
-    class="font-serif text-display lg:text-display-lg text-ink leading-[1.08] lg:leading-[1.02] tracking-[-0.015em] lg:tracking-[-0.02em] mb-6 max-w-3xl"
-  >
-    Yadian Llada Lopez
-  </h1>
+      <!-- h1 -->
+      <h1
+        id="hero-heading"
+        class="font-serif text-display lg:text-display-lg text-ink leading-[1.08] lg:leading-[1.02] tracking-[-0.015em] lg:tracking-[-0.02em] mb-6 max-w-3xl"
+      >
+        Yadian Llada Lopez
+      </h1>
 
-  <!-- Subtitle -->
-  <p class="font-serif italic text-h3 text-ink-muted mb-8">
-    Backend Engineering · Cybersecurity · Cloud Architecture
-  </p>
+      <!-- Subtitle -->
+      <p class="font-serif italic text-h3 text-ink-muted mb-8">
+        Backend Engineering · Cybersecurity · Cloud Architecture
+      </p>
 
-  <!-- Bio -->
-  <p class="font-serif text-body-lg text-ink-muted max-w-prose mb-12 leading-[1.55]">
-    Full-stack engineer focused on Go and security platforms. Currently building
-    the MVP of GitDocAI — AI-powered documentation, Go backend, React and Angular
-    frontends. Also a Go contributor on UTMStack, an open-source SIEM/XDR/SOAR —
-    SOC-AI alert correlation, the UTMStack Agent, and cloud plugins.
-  </p>
+      <!-- Bio -->
+      <p class="font-serif text-body-lg text-ink-muted max-w-prose mb-12 leading-[1.55]">
+        Full-stack engineer focused on Go and security platforms. Currently building
+        the MVP of GitDocAI — AI-powered documentation, Go backend, React and Angular
+        frontends. Also a Go contributor on UTMStack, an open-source SIEM/XDR/SOAR —
+        SOC-AI alert correlation, the UTMStack Agent, and cloud plugins.
+      </p>
 
-  <!-- CTAs — text links, editorial style -->
-  <nav aria-label="Page navigation" class="flex flex-wrap gap-x-8 gap-y-3">
-    <a
-      href="#work"
-      class="font-serif text-body text-accent hover:text-accent-soft transition-colors duration-120 underline underline-offset-4 decoration-accent/40 hover:decoration-accent-soft/60"
-    >
-      View projects →
-    </a>
-    <a
-      href="#contact"
-      class="font-serif text-body text-ink-muted hover:text-ink transition-colors duration-120 underline underline-offset-4 decoration-rule-strong hover:decoration-rule-strong"
-    >
-      Get in touch →
-    </a>
-  </nav>
+      <!-- CTAs — text links, editorial style -->
+      <nav aria-label="Page navigation" class="flex flex-wrap gap-x-8 gap-y-3">
+        <a
+          href="#work"
+          class="font-serif text-body text-accent hover:text-accent-soft transition-colors duration-120 underline underline-offset-4 decoration-accent/40 hover:decoration-accent-soft/60"
+        >
+          View projects →
+        </a>
+        <a
+          href="#contact"
+          class="font-serif text-body text-ink-muted hover:text-ink transition-colors duration-120 underline underline-offset-4 decoration-rule-strong hover:decoration-rule-strong"
+        >
+          Get in touch →
+        </a>
+      </nav>
+    </div>
+  </CornerFrame>
 </section>

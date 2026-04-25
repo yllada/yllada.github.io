@@ -1,0 +1,38 @@
+---
+export interface Props {
+  inset?: string;
+  size?: string;
+  color?: string;
+}
+
+const {
+  inset = 'top-3 left-3',
+  size = 'w-4 h-4',
+  color = 'border-rule-strong',
+} = Astro.props;
+---
+
+<div class="relative">
+  <!-- top-left -->
+  <span
+    aria-hidden="true"
+    class={`absolute top-3 left-3 ${size} border-t border-l ${color} pointer-events-none`}
+  ></span>
+  <!-- top-right -->
+  <span
+    aria-hidden="true"
+    class={`absolute top-3 right-3 ${size} border-t border-r ${color} pointer-events-none`}
+  ></span>
+  <!-- bottom-left -->
+  <span
+    aria-hidden="true"
+    class={`absolute bottom-3 left-3 ${size} border-b border-l ${color} pointer-events-none`}
+  ></span>
+  <!-- bottom-right -->
+  <span
+    aria-hidden="true"
+    class={`absolute bottom-3 right-3 ${size} border-b border-r ${color} pointer-events-none`}
+  ></span>
+
+  <slot />
+</div>
